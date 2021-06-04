@@ -9,5 +9,10 @@
 		<input type="file" name="uploadFile" />
 		<button type="submit">등록</button>
 	</form>
+
+	<form th:action="@{'/nioFile'}" method="POST" enctype="multipart/form-data">
+		<input type="file" name="nioUploadFile" />
+		<button type="submit">등록</button>
+	</form>
 </body>
 </html>
