@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+</head>
+<body>
+    <form>
+        <table class="dataTable">
+            <thead>
+                <tr>
+                    <th>no</th>
+                    <th>fileName</th>
+                    <th>fileSize</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="list, ${list}">
+                    <td th:text="${list.id}"></td>
+                    <td th:text="${list.fileName}"></td>
+                    <td th:text="${list.fileSize}"></td>
+                    <td th:text="${list.regDate}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <script>
+        $(function(){
+           $(".dataTable").DataTable();
+        });
+    </script>
+</body>
+</html>
